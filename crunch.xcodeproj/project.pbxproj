@@ -119,6 +119,7 @@
 				1BD1CE4A1E78EC44009C02A2 /* Sources */,
 				1BD1CE4B1E78EC44009C02A2 /* Frameworks */,
 				1BD1CE4C1E78EC44009C02A2 /* CopyFiles */,
+				03B1EE792A1E757000641246 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -149,6 +150,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 1BD1CE451E78EC44009C02A2;
@@ -160,6 +162,27 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03B1EE792A1E757000641246 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nRELEASE_BUILD_FOLDER=\"${BUILT_PRODUCTS_DIR}\"\nINSTALL_DIR=\"${SRCROOT}/bin\"\n\nmkdir -p \"${INSTALL_DIR}\"\n\ncp \"${RELEASE_BUILD_FOLDER}/${EXECUTABLE_NAME}\" \"$INSTALL_DIR\"\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1BD1CE4A1E78EC44009C02A2 /* Sources */ = {
@@ -272,6 +295,7 @@
 		1BD1CE561E78EC44009C02A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -280,6 +304,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_OPTIMIZATION_LEVEL = fast;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
